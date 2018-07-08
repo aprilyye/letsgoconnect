@@ -30,7 +30,7 @@
         foreach($imgs as $img) {
             echo "<td>";
             $src = $img[1].$img[2];
-            echo '<a href="index.php?image='.$img[0].'"><img alt="Image Upload" src="'.$src.'" width="250" height="335"/></a>';
+            echo '<a href="index.php?image='.$img[0].'"><img alt="Image Upload" src="'.$src.'" width="300" height="335"/></a>';
 
             echo "</td>";
             $counter++;
