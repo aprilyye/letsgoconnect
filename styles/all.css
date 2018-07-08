@@ -1,0 +1,330 @@
+html {
+  font-family: sans-serif;
+}
+
+h1, a {
+  color: #f9f7f7;
+}
+
+h2 {
+  color: #ad5f5f;
+  text-align: center;
+}
+
+h3 {
+  color: #e0998f;
+}
+
+h4 {
+  text-align: center;
+  color: black;
+  font-size: 15px;
+}
+
+.positioned {
+  left: 700px;
+}
+
+#pimg {
+  padding-left: 500px;
+}
+
+#pheader {
+  padding-left: 590px;
+  font-size: 30px;
+  font-style: italic;
+  color: #e0998f;
+}
+
+#ph2 {
+  margin-left: 600px;
+  font-size: 20px;
+}
+
+#pupload {
+  padding-left: 500px;
+  font-size: 15px;
+  color: gray;
+}
+
+div button {
+  color: white;
+  background-color: gray;
+  border: none;
+  font-size: 15px;
+  margin-bottom: 5px;
+  text-align: center;
+  vertical-align: center;
+  padding: 10px 15px;
+}
+
+button {
+  background-color: #f9f7f7;
+  border: 1px #e0998f solid;
+  border-radius: 12px;
+  color: #e0998f;
+  padding: 15px 32px;
+  text-align: center;
+  display: inline-block;
+  font-size: 24px;
+  margin: 4px 2px;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  font-weight: bold;
+}
+
+#imgopen {
+  padding: 100px;
+  padding-top: 5px;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  float: left;
+}
+
+article p {
+  text-align: justify;
+}
+
+header {
+  background-color: #e0998f;
+  padding: 1px 0 30px 0;
+}
+
+header #title {
+  padding: 10px;
+}
+
+#submit_insert {
+  padding-bottom: 500px;
+}
+
+#tags_dropdown{
+  width: 700px;
+  size: 700;
+  padding-left: 500px;
+}
+
+#tags_dropdown{
+  width: 700px;
+  size: 700;
+  padding-left: 550px;
+}
+
+#tagEntry{
+  width: 700px;
+  size: 700;
+  padding-left: 600px;
+}
+
+#uploadImage {
+  width: 700px;
+  size: 700;
+  padding-left: 500px;
+}
+
+#menu {
+  display: inline;
+}
+
+#menu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#menu li {
+  margin: 0;
+  padding: 10px;
+  display: inline;
+}
+
+footer {
+  padding: 10px 10px;
+  background-color: #e0998f;
+}
+
+body {
+  margin: 0 auto;
+}
+
+figure {
+  margin: 20px;
+}
+
+figure img {
+  width: 200px;
+  padding: 100px;
+}
+
+#content-wrap {
+  padding: 10px;
+}
+
+#more {
+  font-weight: bold;
+  background-color: #978fad;
+  padding: 10px;
+  font-size: 18px;
+
+  cursor: pointer;
+}
+
+#more:hover {
+  background-color: #78e6cf;
+}
+
+#more-content {
+  background: #bbbbbb;
+  padding: 10px;
+}
+
+#mail {
+  width: 300px;
+}
+
+#submit {
+  margin-top: 10px;
+}
+
+#database {
+  float: right;
+}
+
+.citation {
+  font-size: 70%;
+}
+
+.error {
+  display: inline-block;
+  background-color: white;
+  border: 1px #b92467 solid;
+  color: #b92467;
+  padding: 5px;
+  font-weight: bold;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Table Stylings */
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,th {
+  text-align: center;
+  padding: 10px;
+  width: 10%;
+}
+
+.dark_col {
+  background-color: #d4E6f1;
+}
+
+.light_col {
+  background-color: #edf4fc;
+}
+
+#current_page {
+  font-weight: bold;
+  border-style: solid;
+  padding: 2px 2px 2px 2px;
+  text-decoration: none;
+}
+
+#round_button1 {
+  background-color: #f9f7f7;
+  border: 2px #e0998f solid;
+  border-radius: 100px;
+  color: #e0998f;
+  padding: 15px 32px;
+  text-align: center;
+  display: inline-block;
+  font-size: 40px;
+  margin: 4px 2px;
+  font-weight: bold;
+}
+
+.bold {
+  font-weight: bold;
+  font-size: 105%;
+}
+
+.small {
+  max-width: 200px;
+  max-height: 200px;
+}
+
+#flower_order {
+  width: 350px;
+}
+
+#flower_order ul {
+  padding-left: 0;
+}
+
+.order {
+  margin: 5px;
+  list-style: none;
+  text-align: right;
+}
+
+.order input {
+  margin-left: 5px;
+  display: inline;
+}
+
+#order_note {
+  font-size: 80%;
+  display: block;
+  padding-left: 15px;
+}
+
+input[type=number] {
+  width: 60px;
+}
+
+#flower_order input {
+  float: right;
+}
+
+#current_img{
+  display: block;
+  height: 200px;
+}
+
+.button {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.app_order {
+  margin: 5px;
+  list-style: none;
+  text-align: right;
+}
+
+.app_order input, select {
+  margin-left: 50px;
+  margin-right: 100px;
+  width: 150px;
+}
+
+#app_button{
+  float: right;
+}
+
+.app_note {
+  margin-right: 50px;
+  list-style: none;
+  text-align: right;
+  font-size: 80%;
+}
+
+#insurance_form{
+  width: 600px;
+}
