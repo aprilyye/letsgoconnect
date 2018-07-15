@@ -22,16 +22,18 @@
   ?>
 
   <?php
-    // $sql = "SELECT id, folder_path, file_name FROM img ORDER BY id";
-    // $params = array();
-    // $imgs = exec_sql_query($db, $sql, $params)->fetchAll();
-    // echo "reached here".$imgs;
-    // display_all_pics($imgs);
 
     // query to display all images from database
-    $sql = "SELECT id, folder_path, file_name, player_name, bio, kgs_id FROM img ORDER BY id";
+    $sql = "SELECT id, folder_path, file_name, first_name, last_name, bio,
+      kgs_id, tygem_id, igs_id FROM player ORDER BY id";
     $params = array();
     $imgs = exec_sql_query($db, $sql, $params)->fetchAll();
+
+    $sql = "SELECT COUNT(*) FROM player";
+    $params = array();
+    $total_players = (exec_sql_query($db, $sql, $params)->fetchAll())[0][0];
+
+    echo "<h2> Connect with $total_players other players in the world!</h2>";
 
     if (isset($imgs) and !empty($imgs)) {
         echo "<table>";
@@ -42,12 +44,20 @@
             $src = $img[1].$img[2];
             echo '<a href="index.php?image='.$img[0].'"><img alt="Image Upload"
                   src="'.$src.'" width="350" height="335"/></a>';
-            $player_name = $img[3];
-            $bio = $img[4];
-            $kgs_id = $img[5];
-            echo nl2br("\n".$player_name."\n".$bio);
+            $first_name = $img[3];
+            $last_name = $img[4];
+            $bio = $img[5];
+            $kgs_id = $img[6];
+            $tygem_id = $img[7];
+            $igs_id = $img[8];
+
+            echo nl2br("\n"."$first_name $last_name"."\n".$bio);
             if (!empty($kgs_id)) {
               echo nl2br("\n Find me on KGS: ".$kgs_id);
+            } if (!empty($tygem_id)) {
+              echo nl2br("\n Find me on Tygem: ".$tygem_id);
+            } if (!empty($igs_id)) {
+              echo nl2br("\n Find me on IGS: ".$igs_id);
             }
             echo "</td>";
             $counter++;
