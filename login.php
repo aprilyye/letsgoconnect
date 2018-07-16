@@ -38,7 +38,7 @@ $current_page_id="login";
     </form>
   </div>
 
-  <?php include("includes/footer.php");?>
+  <!-- <?php include("includes/footer.php");?> -->
 </body>
 
 </html>
