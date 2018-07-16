@@ -9,7 +9,7 @@
         if ($page_id == $current_page_id) {
           $css_id = "id='current_page'";
         } else {
-          $css_id = "";
+          $css_id = "id='not_current_page'";
         }
         echo "<li><a " . $css_id . " href='" . $page_id. ".php'>$page_name</a></li>";
       }

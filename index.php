@@ -20,6 +20,7 @@
   <?php
     include("includes/header.php");
   ?>
+  <h1> Let's Go Connect </h1>
 
   <?php
 
@@ -33,7 +34,7 @@
     $params = array();
     $total_players = (exec_sql_query($db, $sql, $params)->fetchAll())[0][0];
 
-    echo "<h2> Connect with $total_players other players in the world!</h2>";
+    echo "<h2> ...with $total_players other players in the world!</h2>";
 
     if (isset($imgs) and !empty($imgs)) {
         echo "<table>";
@@ -41,7 +42,11 @@
         $counter = 0;
         foreach($imgs as $img) {
             echo "<td>";
-            $src = $img[1].$img[2];
+            if ($img[1].$img[2] !== '') {
+              $src = $img[1].$img[2];
+            } else {
+              $src = 'uploads/img/emptypic.png';
+            }
             echo '<a href="index.php?image='.$img[0].'"><img alt="Image Upload"
                   src="'.$src.'" width="350" height="335"/></a>';
             $first_name = $img[3];
@@ -51,7 +56,7 @@
             $tygem_id = $img[7];
             $igs_id = $img[8];
 
-            echo nl2br("\n"."$first_name $last_name"."\n".$bio);
+            echo nl2br("\n"."<h6>$first_name $last_name"."\n".$bio);
             if (!empty($kgs_id)) {
               echo nl2br("\n Find me on KGS: ".$kgs_id);
             } if (!empty($tygem_id)) {
@@ -59,7 +64,7 @@
             } if (!empty($igs_id)) {
               echo nl2br("\n Find me on IGS: ".$igs_id);
             }
-            echo "</td>";
+            echo "</h6></td>";
             $counter++;
             if ($counter % 4 == 0) {
                 echo "</tr>";

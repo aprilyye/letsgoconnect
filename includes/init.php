@@ -1,5 +1,6 @@
 <?php
-$title = "Let's Go Connect";
+// $title = "Let's Go Connect";
+$title = "";
 // using an associative array to map page id to page title
 $pages = array(
   "index" => "Home",
