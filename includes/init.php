@@ -1,10 +1,12 @@
 <?php
-$title = "Let's Go Connect";
+// $title = "Let's Go Connect";
+$title = "";
 // using an associative array to map page id to page title
 $pages = array(
   "index" => "Home",
-  // "login" => "Log in",
-  // "logout" => "Log out"
+  "login" => "Log in",
+  "logout" => "Log out",
+  "signup" => "Sign Up"
 );
 
 // An array to deliver messages to the user
@@ -67,7 +69,7 @@ function check_login() {
   global $db;
   if (isset($_COOKIE["session"])) {
     $session = $_COOKIE["session"];
-    $sql = "SELECT * FROM accounts WHERE session = :session";
+    $sql = "SELECT * FROM player WHERE session = :session";
     $params = array(
       ':session' => $session
     );
@@ -85,7 +87,7 @@ function check_login() {
 function log_in($user, $pswd) {
   global $db;
   if ($user && $pswd) {
-    $sql = "SELECT * FROM accounts WHERE username = :username;";
+    $sql = "SELECT * FROM player WHERE username = :username;";
     $params = array(
       ':username' => $user
     );
@@ -94,7 +96,7 @@ function log_in($user, $pswd) {
       $account = $records[0];
       if ( password_verify($pswd, $account['password']) ) {
         $session = uniqid();
-        $sql = "UPDATE accounts SET session = :session WHERE id = :user_id;";
+        $sql = "UPDATE player SET session = :session WHERE id = :user_id;";
         $params = array(
           ':user_id' => $account['id'],
           ':session' => $session
@@ -124,7 +126,7 @@ function log_out() {
   global $current_user;
   global $db;
   if ($current_user) {
-    $sql = "UPDATE accounts SET session = :session WHERE username = :username;";
+    $sql = "UPDATE player SET session = :session WHERE username = :username;";
     $params = array(
       ':username' => $current_user,
       ':session' => NULL

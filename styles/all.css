@@ -1,13 +1,29 @@
+@font-face {
+font-family:"certa-sans";
+src: url("/fonts/Certa Sans Medium.otf");
+}
 html {
   font-family: sans-serif;
+  background-color: #1B2631;
 }
 
-h1, a {
+h1 {
+  text-align: center;
+  font-family: certa-sans;
   color: #f9f7f7;
+  font-size: 40px;
+}
+
+a {
+  text-align: center;
+  font-family: certa-sans;
+  color: #f9f7f7;
+  font-size: 20px;
 }
 
 h2 {
-  color: #ad5f5f;
+  font-family: certa-sans;
+  color: #EAECEE;
   text-align: center;
 }
 
@@ -21,6 +37,14 @@ h4 {
   font-size: 15px;
 }
 
+h6 {
+  text-align: center;
+  color: white;
+  font-size: 15px;
+  line-height: 30px;
+  margin-top: 0px;
+}
+
 .positioned {
   left: 700px;
 }
@@ -31,9 +55,11 @@ h4 {
 
 #pheader {
   padding-left: 590px;
-  font-size: 30px;
+  font-size: 50px;
   font-style: italic;
-  color: #e0998f;
+  text-align: center;
+  margin-left: 600px;
+  color: #1B2631;
 }
 
 #ph2 {
@@ -47,15 +73,24 @@ h4 {
   color: gray;
 }
 
+#signupform, #login {
+  padding-left: 500px;
+  line-height: 40px;
+}
+
 div button {
-  color: white;
-  background-color: gray;
+  color: #0e2120;
+  background-color: #00FFFF;
   border: none;
   font-size: 15px;
   margin-bottom: 5px;
   text-align: center;
   vertical-align: center;
   padding: 10px 15px;
+}
+
+label {
+  color: #edeff2;
 }
 
 button {
@@ -83,10 +118,12 @@ button {
 
 article p {
   text-align: justify;
+  color: white;
 }
 
 header {
-  background-color: #e0998f;
+  background-color: #1B2631;
+  text-align: center;
   padding: 1px 0 30px 0;
 }
 
@@ -140,7 +177,8 @@ header #title {
 
 footer {
   padding: 10px 10px;
-  background-color: #e0998f;
+  background-color: #1B2631;
+  color: white;
 }
 
 body {
@@ -230,9 +268,17 @@ td,th {
 
 #current_page {
   font-weight: bold;
-  border-style: solid;
+  color: #00FFFF;
+  border-style: none none solid none;
+  border-color: #00FFFF;
+  border-width: 10px;
   padding: 2px 2px 2px 2px;
   text-decoration: none;
+}
+
+#not_current_page {
+  font-weight: none;
+  border-style: none;
 }
 
 #round_button1 {
