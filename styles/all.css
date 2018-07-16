@@ -28,13 +28,23 @@ h2 {
 }
 
 h3 {
-  color: #e0998f;
+  font-family: certa-sans;
+  color: #00FFFF;
+  text-align: left;
+  font-size: 40px;
 }
 
 h4 {
   text-align: center;
   color: black;
   font-size: 15px;
+}
+
+h5 {
+  text-align: left;
+  color: #EAECEE;
+  font-size: 20px;
+  line-height: 40px;
 }
 
 h6 {
@@ -78,34 +88,22 @@ h6 {
   line-height: 40px;
 }
 
-div button {
+button {
   color: #0e2120;
   background-color: #00FFFF;
   border: none;
+  border-radius: 12px;
   font-size: 15px;
-  margin-bottom: 5px;
   text-align: center;
   vertical-align: center;
   padding: 10px 15px;
+  display: inline;
+  margin: 4px 2px;
+  font-weight: bold;
 }
 
 label {
   color: #edeff2;
-}
-
-button {
-  background-color: #f9f7f7;
-  border: 1px #e0998f solid;
-  border-radius: 12px;
-  color: #e0998f;
-  padding: 15px 32px;
-  text-align: center;
-  display: inline-block;
-  font-size: 24px;
-  margin: 4px 2px;
-  margin-top: 20px;
-  margin-bottom: 50px;
-  font-weight: bold;
 }
 
 #imgopen {

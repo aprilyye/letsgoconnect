@@ -104,7 +104,7 @@ function log_in($user, $pswd) {
         $result = exec_sql_query($db, $sql, $params);
         if ($result) {
           setcookie("session", $session, time()+3600);  /* expire in 1 hour */
-          record_message("Welcome, $user! You've successfully logged in.");
+          record_message("Welcome back! You've successfully logged in as $user!");
           return TRUE;
         } else {
           record_message("Log in failed.");
