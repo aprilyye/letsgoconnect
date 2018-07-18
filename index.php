@@ -33,8 +33,6 @@
 
 
     function display_selected_img ($selected_img, $db) {
-      var_dump($_POST);
-
 
       $sql = "SELECT id, folder_path, file_name, first_name, last_name, bio,
         ranking, kgs_id, tygem_id, igs_id, username FROM player WHERE id = ".$selected_img;
@@ -84,6 +82,10 @@
                 <button name="edit_profile" type="submit">Edit Profile</button>
               </form>
               <?php
+            }
+
+            if (isset($_POST["submit_upload"])){
+              echo "reached here2";
             }
           }
       }
