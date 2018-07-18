@@ -5,9 +5,7 @@ include("includes/init.php");
 $current_page_id="logout";
 
 log_out();
-if (!$current_user) {
-  record_message("Thanks for joining LetsGoConnect! You've been successfully logged out!");
-}
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -24,14 +22,15 @@ if (!$current_user) {
   <?php include("includes/header.php");?>
 
   <div id="content-wrap">
-    <h3>Log Out</h3>
+    <h1>Log Out</h1>
 
     <?php
-    print_messages();
+      if (!$current_user) {
+        echo ("<h6>Thanks for joining LetsGoConnect! You've been successfully logged out!</h6>");
+      }
     ?>
   </div>
 
-  <?php include("includes/footer.php");?>
 </body>
 
 </html>

@@ -13,14 +13,17 @@
         }
         echo "<li><a " . $css_id . " href='" . $page_id. ".php'>$page_name</a></li>";
       }
+      if ($current_user) {
+        echo "<h7>Logged in as $current_user</h7>";
+      }
       ?>
     </ul>
-    <p>
+    <!-- <p>
       <?php
       if ($current_user) {
         echo "Logged in as $current_user";
       }
       ?>
-    </p>
+    </p> -->
   </nav>
 </header>

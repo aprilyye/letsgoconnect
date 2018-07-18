@@ -35,7 +35,7 @@ const IMG_UPLOADS_PATH = "uploads/img/";
           <label>Last Name:</label>
           <input type="text" name="last_name" required/> <br>
           <label>Bio:</label>
-          <textarea rows="4" cols ="50" name="bio" form="signupform"> </textarea><br>
+          <textarea rows="8" cols ="50" name="bio" form="signupform"> </textarea><br>
           <label>Rank:</label>
           <?php
             $ranks=array();

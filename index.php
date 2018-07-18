@@ -41,7 +41,6 @@
       if (isset($user_info) and !empty($user_info)) {
           $details = $user_info[0];
           $src = $details[1].$details[2];
-          echo ("<h6>src = $src</h6>");
           $first_name = $details[3];
           $name = $first_name." ".$details[4];
           $bio = $details[5];
@@ -74,19 +73,18 @@
             // check if selected profile is logged in user himself
             // echo '<form>';
             $cur_user = check_login();
-            if ($username == $cur_user) {
+            $admin = 'aaronyyye@gmail.com';
+            if ($username == $cur_user || $cur_user == $admin) {
               ?>
-              <form action="/changeprofilepic.php" method="post">
-                <button name="upload_image" type="submit">Change Profile Picture</button>
-              </form>
-              <form action="/editprofile.php" method="post">
-                <button name="edit_profile" type="submit">Edit Profile</button>
-              </form>
+              <div class="button-container">
+                <form action="/changeprofilepic.php" method="post">
+                  <button name="upload_image" type="submit">Change Profile Picture</button>
+                </form>
+                <form action="/editprofile.php" method="post">
+                  <button name="edit_profile" type="submit">Edit Profile</button>
+                </form>
+              </div>
               <?php
-            }
-
-            if (isset($_POST["submit_upload"])){
-              echo "reached here2";
             }
           }
       }

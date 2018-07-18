@@ -52,7 +52,30 @@ h6 {
   color: white;
   font-size: 15px;
   line-height: 30px;
+  margin-right: 0px;
+}
+
+h7 {
+  text-align: right;
+  color: #EAECEE;
+  font-size: 15px;
+  line-height: 30px;
   margin-top: 0px;
+}
+
+textarea {
+  margin-top: 1.5%;
+  vertical-align: top;
+  width: 46.5%;
+}
+
+.button-container form,
+.button-container form div {
+  display: inline;
+}
+
+.button-container button {
+  display: inline;
 }
 
 .positioned {
