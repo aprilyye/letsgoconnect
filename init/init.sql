@@ -35,7 +35,7 @@ CREATE TABLE `img_region` (
 /* pswd for Aaron Ye: abc123 */
 INSERT INTO `player` (username, password, folder_path, file_name,
 	first_name, last_name, bio, kgs_id, tygem_id, ranking)
-	VALUES ('aaron@gmail.com', '$2y$10$2bfu6UtS7g1xfr5iotJGHe/nJ7U8aQQOi.b8R8dY0dVZ4V8PtS37K',
+	VALUES ('aaronyyye@gmail.com', '$2y$10$2bfu6UtS7g1xfr5iotJGHe/nJ7U8aQQOi.b8R8dY0dVZ4V8PtS37K',
 		'uploads/img/', '1.png', 'Aaron', 'Ye', 'I love Go', 'kgs 1', 'tygem1',
 		'2d');
 

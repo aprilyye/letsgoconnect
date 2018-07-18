@@ -5,8 +5,8 @@ $title = "";
 $pages = array(
   "index" => "Home",
   "login" => "Log in",
-  "logout" => "Log out",
-  "signup" => "Sign Up"
+  "signup" => "Sign Up",
+  "logout" => "Log out"
 );
 
 // An array to deliver messages to the user
@@ -104,7 +104,7 @@ function log_in($user, $pswd) {
         $result = exec_sql_query($db, $sql, $params);
         if ($result) {
           setcookie("session", $session, time()+3600);  /* expire in 1 hour */
-          record_message("Welcome back! You've successfully logged in as $user!");
+          echo"<h6>Welcome back! You've successfully logged in as $user!</h6>";
           return TRUE;
         } else {
           record_message("Log in failed.");
