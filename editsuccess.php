@@ -39,11 +39,12 @@ $current_page_id="editsuccess";
 
         // insert fields into db
 
-        $sql = "UPDATE player SET bio = '$bio', ranking = '$ranking',
-          $kgs_id = '$kgs_id', tygem_id = '$tygem_id', igs_id = '$igs_id'
+        $sql = "UPDATE player SET bio = ifnull('$bio', bio), ranking = ifnull('$ranking', ranking),
+          kgs_id = ifnull('$kgs_id', kgs_id), tygem_id = ifnull('$tygem_id', tygem_id),
+          igs_id = ifnull('$igs_id', igs_id)
           WHERE username = '$user'";
 
-        echo "sql = $sql";
+        echo "<h6>sql = $sql</h6>";
 
         $params = array();
         $result = exec_sql_query($db, $sql, $params);
