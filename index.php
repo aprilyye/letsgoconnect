@@ -41,6 +41,7 @@
       if (isset($user_info) and !empty($user_info)) {
           $details = $user_info[0];
           $src = $details[1].$details[2];
+          echo ("<h6>src = $src</h6>");
           $first_name = $details[3];
           $name = $first_name." ".$details[4];
           $bio = $details[5];

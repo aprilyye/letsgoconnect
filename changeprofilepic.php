@@ -36,35 +36,42 @@ const IMG_UPLOADS_PATH = "uploads/img/";
 
 <?php
   if (isset($_POST["submit_upload"]) and !empty(check_login())){ // if user is logged in and wants to upload an image
+      // get id of uploader
+      $uploader = check_login();
+
+      $sql = "SELECT id FROM player WHERE username = '$uploader'";
+      $params = array();
+      $uploader_id = exec_sql_query($db, $sql, $params)->fetchAll()[0][0];
+
       $upload_info = $_FILES["upload_file"];
       if ($upload_info['error'] == UPLOAD_ERR_OK) {
         $upload_name = basename($upload_info["name"]);
         $upload_ext = strtolower(pathinfo($upload_name, PATHINFO_EXTENSION) );
-        $uploader = check_login();
-
         $upload_path = IMG_UPLOADS_PATH;
-        echo "<h6> folder path = $upload_path, file path = $upload_name</h6>";
-        $sql = "UPDATE player SET folder_path = '$upload_path', file_name = '$upload_name'
+        echo "<h6>upload path = $upload_path, name = $upload_name, ext = $upload_ext</h6>";
+
+        $upload_file_rename = "$uploader_id.png";
+
+        $sql = "UPDATE player SET folder_path = '$upload_path', file_name = '$upload_file_rename'
           WHERE username = '$uploader'";
         echo "<h6>sql = $sql</h6>";
         $params = array();
         $result = exec_sql_query($db, $sql, $params);
         if ($result) {
-          $file_id = $db->lastInsertId("id");
-          //echo "fileid = ".$file_id;
-          if (move_uploaded_file($upload_info["tmp_name"], IMG_UPLOADS_PATH . "$file_id.$upload_ext")){
+          var_dump($result);
+          if (move_uploaded_file($upload_info["tmp_name"], IMG_UPLOADS_PATH . "$uploader_id.$upload_ext")){
             array_push($messages, "Your image has been uploaded.");
             // update database to file_id.JPG to be consistent with the move
             // $sqlupdate = "UPDATE player SET file_name ='"."$file_id.$upload_ext"."' WHERE player.id =".$file_id;
             //
             // $params = array();
             // $result_update = exec_sql_query($db, $sqlupdate, $params)->fetchAll();
-
-            $sql = "SELECT * FROM player WHERE username = '$uploader'";
-            $params = array();
-            $result = exec_sql_query($db, $sql, $params);
-            echo "<h6>$result[0]</h6>";
-            var_dump($result);
+            //
+            // $sql = "SELECT * FROM player WHERE username = '$uploader'";
+            // $params = array();
+            // $result = exec_sql_query($db, $sql, $params);
+            // echo "<h6>$result[0]</h6>";
+            // var_dump($result);
 
             echo "Your image has been uploaded! Thanks for adding to the gallery!";
           }
