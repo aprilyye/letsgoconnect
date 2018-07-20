@@ -53,7 +53,7 @@ const IMG_UPLOADS_PATH = "uploads/img/";
         $upload_ext = strtolower(pathinfo($upload_name, PATHINFO_EXTENSION) );
         $upload_path = IMG_UPLOADS_PATH;
 
-        $upload_file_rename = "$uploader_id.png";
+        $upload_file_rename = "$uploader_id.$upload_ext";
 
         $sql = "UPDATE player SET folder_path = '$upload_path', file_name = '$upload_file_rename'
           WHERE username = '$uploader'";
