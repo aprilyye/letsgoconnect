@@ -4,7 +4,7 @@ BEGIN TRANSACTION;
 CREATE TABLE `player` (
 	`id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
 	`folder_path`	VARCHAR (100),
-	`file_name`	VARCHAR (200) UNIQUE,
+	`file_name`	VARCHAR (200),
 	`username`	TEXT NOT NULL UNIQUE,
 	`password`	TEXT NOT NULL,
 	`session`	TEXT UNIQUE,

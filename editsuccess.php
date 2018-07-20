@@ -24,10 +24,11 @@ $current_page_id="editsuccess";
 <?php
   if (isset($_POST['submit_edit']) && !empty(check_login())) {
     $cur_user = check_login();
-    edit_prof($cur_user, $db);
+    $username = filter_input(INPUT_POST, 'user_prof', FILTER_SANITIZE_STRING);
+    edit_prof($cur_user, $db, $username);
   }
 
-  function edit_prof($user, $db) {
+  function edit_prof($user, $db, $user_prof) {
     if ($user) {
       try {
         // get other fields from signup form
@@ -42,16 +43,10 @@ $current_page_id="editsuccess";
         $sql = "UPDATE player SET bio = ifnull('$bio', bio), ranking = ifnull('$ranking', ranking),
           kgs_id = ifnull('$kgs_id', kgs_id), tygem_id = ifnull('$tygem_id', tygem_id),
           igs_id = ifnull('$igs_id', igs_id)
-          WHERE username = '$user'";
-
-        echo "<h6>sql = $sql</h6>";
+          WHERE username = '$user_prof'";
 
         $params = array();
         $result = exec_sql_query($db, $sql, $params);
-        if ($result) {
-          echo "<h6> bio has been edited! </h6>";
-          // echo("Welcome, $user! You've successfully become a part of the community");
-        }
 
       } catch (Exception $e) {
         record_message("Could not edit profile.");

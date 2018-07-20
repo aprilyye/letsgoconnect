@@ -14,7 +14,9 @@ const IMG_UPLOADS_PATH = "uploads/img/";
   <title>Sign Up- <?php echo $title;?></title>
 </head>
 <body>
-  <?php include("includes/header.php");?>
+  <?php include("includes/header.php");
+    $username = filter_input(INPUT_POST, 'user_prof', FILTER_SANITIZE_STRING);
+  ?>
 
   <div id="content-wrap">
     <h1>Upload your new profile pic!</h1>
@@ -26,6 +28,7 @@ const IMG_UPLOADS_PATH = "uploads/img/";
           <input type="file" name="upload_file" required>
         <!-- </li> -->
         <!-- <li> -->
+          <input type='hidden' name='user_prof' value='<?php echo "$username";?>'/>
           <i><br><button name="submit_upload" type="submit">Upload</button></i>
         <!-- </li> -->
       </ul>
@@ -35,9 +38,10 @@ const IMG_UPLOADS_PATH = "uploads/img/";
 </html>
 
 <?php
+
   if (isset($_POST["submit_upload"]) and !empty(check_login())){ // if user is logged in and wants to upload an image
       // get id of uploader
-      $uploader = check_login();
+      $uploader = $username;
 
       $sql = "SELECT id FROM player WHERE username = '$uploader'";
       $params = array();
@@ -48,21 +52,17 @@ const IMG_UPLOADS_PATH = "uploads/img/";
         $upload_name = basename($upload_info["name"]);
         $upload_ext = strtolower(pathinfo($upload_name, PATHINFO_EXTENSION) );
         $upload_path = IMG_UPLOADS_PATH;
-        echo "<h6>upload path = $upload_path, name = $upload_name, ext = $upload_ext</h6>";
 
         $upload_file_rename = "$uploader_id.png";
 
         $sql = "UPDATE player SET folder_path = '$upload_path', file_name = '$upload_file_rename'
           WHERE username = '$uploader'";
-        echo "<h6>sql = $sql</h6>";
         $params = array();
         $result = exec_sql_query($db, $sql, $params);
         if ($result) {
-          var_dump($result);
           if (move_uploaded_file($upload_info["tmp_name"], IMG_UPLOADS_PATH . "$uploader_id.$upload_ext")){
             array_push($messages, "Your image has been uploaded.");
-
-            echo "Your image has been uploaded! Thanks for adding to the gallery!";
+            echo "<h6> Your profile pic has been updated!</h6>";
           }
         } else {
           echo "Failed to upload image.";
