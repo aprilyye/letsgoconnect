@@ -95,7 +95,7 @@
     function display_all_img ($db) {
       // query to display all images from database
       $sql = "SELECT id, folder_path, file_name, first_name, last_name, bio,
-        kgs_id, tygem_id, igs_id FROM player ORDER BY id";
+        kgs_id, tygem_id, igs_id, ranking FROM player ORDER BY id";
       $params = array();
       $imgs = exec_sql_query($db, $sql, $params)->fetchAll();
 
@@ -124,8 +124,10 @@
               $kgs_id = $img[6];
               $tygem_id = $img[7];
               $igs_id = $img[8];
+              $ranking = $img[9];
 
               echo nl2br("\n"."<h6>$first_name $last_name"."\n A litle about me: ".$bio);
+              echo nl2br("\n"."Rank: $ranking");
               if (!empty($kgs_id)) {
                 echo nl2br("\n Find me on KGS: ".$kgs_id);
               } if (!empty($tygem_id)) {
