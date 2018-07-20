@@ -48,7 +48,7 @@
           $kgs_id = $details[7];
           $tygem_id = $details[8];
           $igs_id = $details[9];
-          echo '<img id="imgopen" alt="Image Upload" src="'.$src.'" width="350" height="350"/>';
+          echo '<img id="imgopen" alt="Image Upload" src="'.$src.'" width="350"/>';
           echo "<h3> ...with $name!</h3>";
           echo "<h5>";
           echo "A little about $first_name: $bio<br>";
@@ -117,7 +117,7 @@
                 $src = 'uploads/img/emptypic.png';
               }
               echo '<a href="index.php?image='.$img[0].'"><img alt="Image Upload"
-                    src="'.$src.'" width="350" height="335"/></a>';
+                    src="'.$src.'" width="350"/></a>';
               $first_name = $img[3];
               $last_name = $img[4];
               $bio = $img[5];
