@@ -41,6 +41,7 @@ $current_page_id="editprofile";
               }
             }
             echo"</select><br>";
+            $username = filter_input(INPUT_POST, 'user_prof', FILTER_SANITIZE_STRING);
           ?>
           <label>Kgs ID:</label>
           <input type="text" name="kgs_id"/> <br>
@@ -48,6 +49,7 @@ $current_page_id="editprofile";
           <input type="text" name="tygem_id"/> <br>
           <label>IGS ID (Panda Net):</label>
           <input type="text" name="igs_id"/> <br>
+          <input type='hidden' name='user_prof' value='<?php echo "$username";?>'/>
           <br><button name="submit_edit" type="submit">Save Edits</button>
         </p>
       </ul>

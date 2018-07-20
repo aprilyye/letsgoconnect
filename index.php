@@ -78,9 +78,11 @@
               ?>
               <div class="button-container">
                 <form action="/changeprofilepic.php" method="post">
+                  <input type='hidden' name='user_prof' value='<?php echo "$username";?>'/>
                   <button name="upload_image" type="submit">Change Profile Picture</button>
                 </form>
                 <form action="/editprofile.php" method="post">
+                  <input type='hidden' name='user_prof' value='<?php echo "$username";?>'/>
                   <button name="edit_profile" type="submit">Edit Profile</button>
                 </form>
               </div>

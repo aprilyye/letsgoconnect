@@ -67,7 +67,7 @@ $current_page_id="signupsucccess";
         );
         $result = exec_sql_query($db, $sql, $params);
         if ($result) {
-          // echo("Welcome, $user! You've successfully become a part of the community");
+          echo("<h6>Welcome, $user! You've successfully become a part of the community</h6>");
         }
 
       } catch (Exception $e) {
